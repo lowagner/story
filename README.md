@@ -1,12 +1,11 @@
 story
 =====
 
-playing around with pixi.js
-In the bin folder, there are som pixi.js 
-files that make story magic happen.
+playing around with pixi.js.  In the bin folder, 
+there are some pixi.js files that make story magic happen.
 
-pixi.js is licensed under the MIT license.  
+pixi.js is licensed under the MIT license.  Check it out here.
 
-    https://github.com/GoodBoyDigital/pixi.js
+https://github.com/GoodBoyDigital/pixi.js
 
 
