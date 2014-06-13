@@ -1,11 +1,13 @@
 // pretending to make classes in javascript!
 
-function Page ( stage ) {
-    //setup
+function Page( stage ) {
+    //setup.
 
+    // grab a hold of the stage
     this.stage = stage;
-    this.graphics = new PIXI.Graphics();
 
+    this.graphics = new PIXI.Graphics();    
+    this.stage.addChild(this.graphics);
 
     //this.array = array;
     this.count = 0;
@@ -52,10 +54,7 @@ function Page ( stage ) {
 
     // let's create moving shape
     this.thing = new PIXI.Graphics();
-
-    stage.addChild(this.graphics);
-
-    stage.addChild(this.thing);
+    this.stage.addChild(this.thing);
 
     this.thing.position.x = 620/2;
     this.thing.position.y = 380/2;
@@ -64,7 +63,7 @@ function Page ( stage ) {
 // how to make functions that won't get initiated each new Page comes around...
 
 Page.prototype.update = function( dt ) {
-    this.count += 0.005 * dt;
+    this.count += 5 * dt;
 //    var arrayLength = this.array.length;
 //    for (var i=0; i<arrayLength; i++) {
 //        this.array[i].update( dt )
@@ -85,11 +84,10 @@ Page.prototype.update = function( dt ) {
     this.thing.lineTo(-120 + Math.sin(this.count) * 20, -100 + Math.cos(this.count)* 20);
 
     this.thing.rotation = this.count  * 0.1;
-    renderer.render(stage);
-    requestAnimFrame( animate );
+
 };
 
-Page.prototype.click = function() {
+Page.prototype.click = function( idata ) {
     for ( var i=0; i< 300; i++) {
         this.graphics.lineStyle(Math.random() * 30, Math.random() * 0xFFFFFF, 1);
         this.graphics.moveTo(Math.random() * 620,Math.random() * 380);
