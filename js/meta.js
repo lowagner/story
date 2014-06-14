@@ -1,3 +1,19 @@
+function padZero( string ) {
+    if ( string.length == 1 )
+        return "0"+string;
+    else if ( string.length == 2 )
+        return string;
+    else
+        return string.slice(0,2);
+
+};
+
+function makeColor( r, g, b ) {
+    return "#" + padZero( Math.round(r).toString(16) )
+               + padZero( Math.round(g).toString(16) )
+               + padZero( Math.round(b).toString(16) );
+};
+
 // pretending to make classes in javascript!
 
 function Page( stage ) {
@@ -83,8 +99,12 @@ Page.prototype.update = function( dt ) {
     this.thing.lineTo(-120 + Math.cos(this.count)* 20, 100 + Math.sin(this.count)* 20);
     this.thing.lineTo(-120 + Math.sin(this.count) * 20, -100 + Math.cos(this.count)* 20);
 
-    this.thing.rotation = this.count  * 0.1;
-
+    this.thing.rotation = this.count  * 0.5;
+    document.body.style.backgroundColor =  makeColor( 0x35 + Math.sin(this.count*0.05)*0x20,
+                                                      0x35 + Math.sin(this.count*0.03)*0x20, 
+                                                      0x35 + Math.sin(this.count*0.04)*0x20 );
+    //document.write( (Math.round(-0.0 * 0x440000)).toString(16) );
+    //document.write("#"+(   0x555555 + Math.round( Math.sin(this.count*0.00001)*0x400004 )   ).toString(16) );
 };
 
 Page.prototype.click = function( idata ) {

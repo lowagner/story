@@ -5,8 +5,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #000000;
     height:100%;
+    background-color:#313331; 
 }
 
 .center {
@@ -19,7 +19,6 @@ body {
     display:table-cell;
     vertical-align:middle;
     text-align:center;
-    background-color:#313331; 
     
     border-color:#112211; 
     border-style:solid;
